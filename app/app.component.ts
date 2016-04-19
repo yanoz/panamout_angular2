@@ -1,43 +1,36 @@
 import {Component} from 'angular2/core';
-
-export class Hero {
-	 id: number;
-	 name: string;
-}
+import {OnInit} from 'angular2/core';
+import {HTTP_PROVIDERS}    from 'angular2/http';
+import {Spot} from './spot';
+import {SpotDetailComponent} from './spot-detail.component';
+import {SpotService} from './spot.service'
 
 @Component({
 	selector: 'panamout',
 	template:`
     <h1>{{title}}</h1>
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-      <li *ngFor="#hero of heroes"
-        [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <h2>My Spots</h2>
+    <ul class="spots">
+      <li *ngFor="#spot of spots"
+        [class.selected]="spot === selectedSpot"
+        (click)="onSelect(spot)">
+        <span class="badge"></span> {{spot.name}}
       </li>
     </ul>
-    <div *ngIf="selectedHero">
-      <h2>{{selectedHero.name}} details!</h2>
-      <div><label>id: </label>{{selectedHero.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-      </div>
-    </div>
+    <spot-detail [spot]="selectedSpot"></spot-detail>
   `,
-  styles:[`
+  	styles:[`
 		.selected {
 			background-color: #CFD8DC !important;
 			color: white;
 		}
-		.heroes {
+		.spots {
 			margin: 0 0 2em 0;
 			list-style - type: none;
 			padding: 0;
 			width: 15em;
 		}
-		.heroes li {
+		.spots li {
 			cursor: pointer;
 			position: relative;
 			left: 0;
@@ -47,20 +40,20 @@ export class Hero {
 			height: 1.6em;
 			border-radius: 4px;
 		}
-		.heroes li.selected:hover {
+		.spots li.selected:hover {
 			background-color: #BBD8DC !important;
 			color: white;
 		}
-		.heroes li:hover {
+		.spots li:hover {
 			color: #607D8B;
 			background-color: #DDD;
 			left: .1em;
 		}
-			.heroes.text {
+			.spots.text {
 				position: relative;
 				top: -3px;
 			}
-				.heroes.badge {
+				.spots.badge {
 					display: inline - block;
 					font-size: small;
 					color: white;
@@ -74,24 +67,29 @@ export class Hero {
 					margin-right: .8em;
 					border-radius: 4px 0 0 4px;
 				}
-  `]
+  `],
+	directives: [SpotDetailComponent],
+	providers: [HTTP_PROVIDERS, SpotService]
 })
 
-export class AppComponent {
-  title = 'Panamout';
-  heroes = HEROES;
-  selectedHero: Hero;
-  onSelect(hero: Hero) { this.selectedHero = hero; }
+export class AppComponent implements OnInit {
+	title = 'Panamout';
+	spots : Spot[];
+  	selectedSpot: Spot;
+	errorMessage: string;
+	constructor(private _spotService: SpotService) { }
+
+  	onSelect(spot: Spot) { this.selectedSpot = spot; }
+
+	getSpots() {
+		this._spotService.getSpots()
+				.subscribe(
+					spots => this.spots = spots,
+					error =>  this.errorMessage = <any>error);
+		}
+
+		ngOnInit() {
+			this.getSpots();
+		}
 }
-var HEROES: Hero[] = [
-  { "id": 11, "name": "Mr. Nice" },
-  { "id": 12, "name": "Narco" },
-  { "id": 13, "name": "Bombasto" },
-  { "id": 14, "name": "Celeritas" },
-  { "id": 15, "name": "Magneta" },
-  { "id": 16, "name": "RubberMan" },
-  { "id": 17, "name": "Dynama" },
-  { "id": 18, "name": "Dr IQ" },
-  { "id": 19, "name": "Magma" },
-  { "id": 20, "name": "Tornado" }
-];
+
