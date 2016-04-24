@@ -7,7 +7,7 @@ import {Observable}     from 'rxjs/Observable';
 export class SpotService {
 	constructor (private http: Http) {}
 
-	private _spotsUrl = 'http://localhost:8010/spot?offset=0&count=3';  // URL to web api
+  private _spotsUrl = 'app/spotdata.json';  // URL to web api
 
 	getSpots(): Observable<Spot[]> {
 		return this.http.get(this._spotsUrl)
@@ -20,6 +20,7 @@ export class SpotService {
 	      throw new Error('Bad response status: ' + res.status);
 	    }
 	    let body = res.json();
+      alert(body.data);
 	    return body.data || { };
   	}
 

@@ -1,0 +1,48 @@
+{
+  "data": [
+    {"name":"La Robe et le Palais","category":"Bar","street":"13 rue des LavandiÃ¨res Saint-Opportune ","details":null,"district":75001,"metas":null,"lat":48.8586,"lng":2.34593,"url":"http://sortir.telerama.fr/paris/lieux/bars/la-robe-et-le-palais,17312.php","address":"La Robe et le Palais, 13 rue des LavandiÃ¨res Saint-Opportune Paris, France"},
+    {"name":"Willi's Wine Bar","category":"Bar","street":"13 rue des Petits Champs ","details":null,"district":75001,"metas":null,"lat":48.8664,"lng":2.3383,"url":"http://sortir.telerama.fr/paris/lieux/bars/willi-s-wine-bar,17311.php","address":"Willi's Wine Bar, 13 rue des Petits Champs Paris, France"},
+    {"name":"Le TrÃ¨s HonorÃ© Bar","category":"Bar","street":"35 place du MarchÃ© Saint-HonorÃ© ","details":null,"district":75001,"metas":null,"lat":48.8676,"lng":2.33171,"url":"http://sortir.telerama.fr/paris/lieux/bars/le-tres-honore-bar,17735.php","address":"Le TrÃ¨s HonorÃ© Bar, 35 place du MarchÃ© Saint-HonorÃ© Paris, France"}
+  ]
+}
+
+{
+"data": [
+{
+name: "La Robe et le Palais",
+category: "Bar",
+street: "13 rue des LavandiÃ¨res Saint-Opportune ",
+details: null,
+district: 75001,
+metas: null,
+lat: 48.8586,
+lng: 2.34593,
+url: "http://sortir.telerama.fr/paris/lieux/bars/la-robe-et-le-palais,17312.php",
+address: "La Robe et le Palais, 13 rue des LavandiÃ¨res Saint-Opportune Paris, France"
+},
+{
+name: "Willi's Wine Bar",
+category: "Bar",
+street: "13 rue des Petits Champs ",
+details: null,
+district: 75001,
+metas: null,
+lat: 48.8664,
+lng: 2.3383,
+url: "http://sortir.telerama.fr/paris/lieux/bars/willi-s-wine-bar,17311.php",
+address: "Willi's Wine Bar, 13 rue des Petits Champs Paris, France"
+},
+{
+name: "Le TrÃ¨s HonorÃ© Bar",
+category: "Bar",
+street: "35 place du MarchÃ© Saint-HonorÃ© ",
+details: null,
+district: 75001,
+metas: null,
+lat: 48.8676,
+lng: 2.33171,
+url: "http://sortir.telerama.fr/paris/lieux/bars/le-tres-honore-bar,17735.php",
+address: "Le TrÃ¨s HonorÃ© Bar, 35 place du MarchÃ© Saint-HonorÃ© Paris, France"
+}
+]
+}

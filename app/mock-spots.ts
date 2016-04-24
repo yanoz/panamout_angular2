@@ -1,4 +1,4 @@
-import {Spot} from './spot';
+/**import {Spot} from './spot';
 export var SPOTS: Spot[] = [
     {"id": 11, "name": "Mr. Nice"},
     {"id": 12, "name": "Narco"},
@@ -10,4 +10,4 @@ export var SPOTS: Spot[] = [
     {"id": 18, "name": "Dr IQ"},
     {"id": 19, "name": "Magma"},
     {"id": 20, "name": "Tornado"}
-];
+];**/
