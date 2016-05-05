@@ -5,7 +5,7 @@ import {Spot} from './spot';
 	selector: 'spot-detail',
   	template: `  
   		<div *ngIf="spot">
-    		<h2>{{spot.name}} details!</h2>
+    		<h2>{{spot.name}} details! {{spot.district}}</h2>
     		<div>
       			<label>name: </label>
       			<input [(ngModel)]="spot.name" placeholder="name"/>
