@@ -10,7 +10,9 @@ import {Spot} from './spot';
       			<label>name: </label>
       			<input [(ngModel)]="spot.name" placeholder="name"/>
     		</div>
-  		</div>`
+        <button (click)="goBack()">Back</button>
+  		</div>`,
+  styleUrls: ['app/spot-detail.component.css']
 })
 
 

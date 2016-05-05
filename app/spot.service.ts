@@ -9,11 +9,18 @@ export class SpotService {
 
 	private _spotsUrl = 'http://localhost:8010/spot?offset=0&count=3';  // URL to web api
 
-	getSpots(): Observable<Spot[]> {
+	/**getSpots(): Observable<Spot[]> {
 		return this.http.get(this._spotsUrl)
 			.map(this.extractData)
 			.catch(this.handleError);
-	}
+	}*/
+
+  getSpots(): Promise<Spot[]> {
+    return this.http.get(this._spotsUrl)
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
+  }
 
  	private extractData(res: Response) {
 	    if (res.status < 200 || res.status >= 300) {
