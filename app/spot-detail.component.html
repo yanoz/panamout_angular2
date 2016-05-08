@@ -1,0 +1,8 @@
+<div *ngIf="spot">
+    		<h2>{{spot.name}} details! {{spot.district}}</h2>
+    		<div>
+      			<label>name: </label>
+      			<input [(ngModel)]="spot.name" placeholder="name"/>
+    		</div>
+        <button (click)="goBack()">Back</button>
+  		</div>

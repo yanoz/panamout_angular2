@@ -1,0 +1,9 @@
+<h2>My Spots</h2>
+<ul class="spots">
+  <li *ngFor="#spot of spots"
+    [class.selected]="spot === selectedSpot"
+    (click)="onSelect(spot)">
+    <span class="badge"></span> {{spot.name}}
+  </li>
+</ul>
+<spot-detail [spot]="selectedSpot"></spot-detail>	

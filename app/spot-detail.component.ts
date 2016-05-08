@@ -3,15 +3,7 @@ import {Spot} from './spot';
 
 @Component({
 	selector: 'spot-detail',
-  	template: `  
-  		<div *ngIf="spot">
-    		<h2>{{spot.name}} details! {{spot.district}}</h2>
-    		<div>
-      			<label>name: </label>
-      			<input [(ngModel)]="spot.name" placeholder="name"/>
-    		</div>
-        <button (click)="goBack()">Back</button>
-  		</div>`,
+  templateUrl: 'app/spot-detail.component.html',
   styleUrls: ['app/spot-detail.component.css']
 })
 

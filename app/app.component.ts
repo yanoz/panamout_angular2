@@ -7,20 +7,13 @@ import { AdminComponent} from './admin.component';
 
 @Component({
   selector: 'panamout',
-  template: `
-    <h1>{{title}}</h1>
-    <nav>
-      <a [routerLink]="['Spots']">Find a Spot!</a>
-      <a [routerLink]="['Admin']">Add a spot!</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: 'app/app.component.html',
+  styleUrls: ['app/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
     SpotService
-  ],
-  styleUrls: ['app/app.component.css']
+  ]  
 })
 
 @RouteConfig([
